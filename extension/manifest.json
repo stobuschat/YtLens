@@ -1,0 +1,64 @@
+{
+  "manifest_version": 3,
+  "name": "YtLens",
+  "version": "0.0.1",
+  "description": "Filter YouTube videos based on language and content",
+
+  "permissions": [
+    "storage"
+  ],
+
+  "host_permissions": [
+    "*://*.youtube.com/*"
+  ],
+
+  "content_scripts": [{
+    "matches": ["*://*.youtube.com/*"],
+    "js": ["content/content.js"]
+  }],
+
+  "background": {
+    "scripts": ["background/background.js"]
+  },
+
+  "web_accessible_resources": [
+    {
+      "resources": ["config/preset.json"],
+      "matches": ["*://*.youtube.com/*"]
+    }
+  ],
+
+  "icons": {
+    "48": "assets/icons/ytlens-icon-light.svg",
+    "96": "assets/icons/ytlens-icon-light.svg"
+  },
+
+  "action": {
+    "default_icon": {
+      "16": "assets/icons/ytlens-icon-light.svg",
+      "32": "assets/icons/ytlens-icon-light.svg"
+    },
+    "default_popup": "popup/popup.html",
+    "theme_icons": [{
+        "light": "assets/icons/ytlens-icon-light.svg",
+        "dark": "assets/icons/ytlens-icon-dark.svg",
+        "size": 16
+      }, {
+        "light": "assets/icons/ytlens-icon-light.svg",
+        "dark": "assets/icons/ytlens-icon-dark.svg",
+        "size": 32
+    }]
+  },
+
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "ytlens@example.com",
+      "strict_min_version": "109.0"
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "type": "object",
+  "properties": {
+    "blacklist": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the language or script."
+          },
+          "pattern": {
+            "type": "string",
+            "description": "The regex pattern to detect the language or script."
+          },
+          "keywords": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "A list of keywords associated with the language or script."
+          },
+          "channels": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "A list of channels associated with the language or script."
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Flag to enable or disable the language or script."
+          },
+          "onDescription": {
+            "type": "boolean",
+            "description": "Flag to enable or disable the filter on video descriptions."
+          },
+          "onTitle": {
+            "type": "boolean",
+            "description": "Flag to enable or disable the filter on video title."
+          },
+          "onChannelName": {
+            "type": "boolean",
+            "description": "Flag to enable or disable the filter on video channel name."
+          },
+          "markNotInterested": {
+            "type": "boolean",
+            "description": "If set videos matching this language or script will be marked as not interested. Otherwise they will be hidden."
+          }
+        },
+        "required": [
+          "name",
+          "enabled"
+        ]
+      }
+    },
+    "whitelist": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the language or script."
+          },
+          "pattern": {
+            "type": "string",
+            "description": "The regex pattern to detect the language or script."
+          },
+          "keywords": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "A list of keywords associated with the language or script."
+          },
+          "channels": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "A list of channels associated with the language or script."
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Flag to enable or disable the language or script."
+          },
+          "onDescription": {
+            "type": "boolean",
+            "description": "Flag to enable or disable the filter on video descriptions."
+          },
+          "onTitle": {
+            "type": "boolean",
+            "description": "Flag to enable or disable the filter on video title."
+          },
+          "onChannelName": {
+            "type": "boolean",
+            "description": "Flag to enable or disable the filter on video channel name."
+          }
+        },
+        "required": [
+          "name",
+          "enabled"
+        ]
+      }
+    }
+  },
+  "required": [
+    "blacklist",
+    "whitelist"
+  ]
+}

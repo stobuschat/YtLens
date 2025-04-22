@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <title>YtLens Filter</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <h1>YtLens Filter</h1>
+        <div class="status">
+            <p>
+                <span><strong>Status:</strong></span>
+                <span id="filter-status">Loading...</span>
+            </p>
+            <p>
+                <span><strong>Dry Run:</strong></span>
+                <label class="switch">
+                    <input type="checkbox" id="toggle-dryrun">
+                    <span class="slider"></span>
+                </label>
+            </p>
+        </div>
+        
+        <button id="toggle-active" class="button-primary">Pause Filter</button>
+        <button id="open-options">⚙️ Options</button>
+        <div class="active-filters" id="filter-counts"></div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>

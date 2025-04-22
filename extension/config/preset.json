@@ -1,0 +1,454 @@
+{
+  "blacklist": [
+    {
+      "name": "non_latin_script",
+      "pattern": "[\\u0400-\\u04FF\\u0590-\\u05FF\\u0600-\\u06FF\\u0900-\\u097F\\u0980-\\u09FF\\u3040-\\u30FF\\u3400-\\u4DBF\\u4E00-\\u9FFF\\uAC00-\\uD7AF]",
+      "keywords": [],
+      "enabled": true,
+      "onDescription": false,
+      "onTitle": true,
+      "onChannelName": true,
+      "markNotInterested": true
+    },{
+      "name": "cyrillic",
+      "pattern": "[\\u0400-\\u04FF\\u0500-\\u052F]",
+      "keywords": [
+        "Россия",
+        "Путин",
+        "Москва",
+        "русский"
+      ],
+      "enabled": true,
+      "onDescription": true,
+      "onTitle": true,
+      "onChannelName": true,
+      "markNotInterested": true
+    },
+    {
+      "name": "chinese",
+      "pattern": "(?![\\u2713\\u2714])[\\u4E00-\\u9FFF\\u3400-\\u4DBF]",
+      "keywords": [
+        "中国",
+        "中文",
+        "视频",
+        "新闻"
+      ],
+      "enabled": true,
+      "onDescription": true,
+      "onTitle": true,
+      "onChannelName": true,
+      "markNotInterested": true
+    },
+    {
+      "name": "japanese_kanji",
+      "pattern": "[\\u3040-\\u309F\\u30A0-\\u30FF\\u4E00-\\u9FFF]",
+      "keywords": [
+        "日本",
+        "アニメ",
+        "ビデオ"
+      ],
+      "enabled": true,
+      "onDescription": true,
+      "onTitle": true,
+      "onChannelName": true,
+      "markNotInterested": true
+    },
+    {
+      "name": "korean",
+      "pattern": "[\\uAC00-\\uD7AF\\u1100-\\u11FF]",
+      "keywords": [
+        "한국",
+        "뉴스",
+        "비디오"
+      ],
+      "enabled": true,
+      "onDescription": true,
+      "onTitle": true,
+      "onChannelName": true,
+      "markNotInterested": true
+    },
+    {
+      "name": "thai",
+      "pattern": "[\\u0E00-\\u0E7F]",
+      "keywords": [
+        "ไทย",
+        "วิดีโอ",
+        "ข่าว"
+      ],
+      "enabled": true,
+      "onDescription": true,
+      "onTitle": true,
+      "onChannelName": true,
+      "markNotInterested": true
+    },
+    {
+      "name": "arabic",
+      "pattern": "[\\u0600-\\u06FF]",
+      "keywords": [
+        "عربي",
+        "فيديو",
+        "أخبار"
+      ],
+      "enabled": true,
+      "onDescription": true,
+      "onTitle": true,
+      "onChannelName": true,
+      "markNotInterested": true
+    },
+    {
+      "name": "spanish",
+      "pattern": "(?:^|\\s)(el|la|los|las|ese|esta|muy|más|así|está|día|año)(?:\\s|$)",
+      "keywords": [
+        "español",
+        "latino",
+        "méxico",
+        "argentina",
+        "colombia",
+        "chile",
+        "venezuela",
+        "perú",
+        "españa"
+      ],
+      "channels": [
+        "Univision",
+        "Telemundo"
+      ],
+      "enabled": true,
+      "onDescription": true,
+      "onTitle": true,
+      "onChannelName": true,
+      "markNotInterested": true
+    },
+    {
+      "name": "portuguese",
+      "pattern": "(?:^|\\s)(isso|está|muito|mais|dia|ano|você|não|sim)(?:\\s|$)",
+      "keywords": [
+        "brasil",
+        "português",
+        "brazil"
+      ],
+      "channels": [
+        "TV Globo",
+        "Record TV"
+      ],
+      "enabled": true,
+      "onDescription": true,
+      "onTitle": true,
+      "onChannelName": true,
+      "markNotInterested": true
+    },
+    {
+      "name": "turkish",
+      "pattern": "[ğĞıİşŞçÇ]",
+      "keywords": [
+        "türkçe",
+        "türkiye",
+        "şarkı"
+      ],
+      "enabled": true,
+      "onDescription": true,
+      "onTitle": true,
+      "onChannelName": true,
+      "markNotInterested": true
+    },
+    {
+      "name": "turkish2",
+      "pattern": "[\\u0100-\\u017F\\u0180-\\u024F\\u1E00-\\u1EFF]",
+      "keywords": [
+        "türkçe",
+        "türkiye",
+        "şarkı"
+      ],
+      "enabled": false,
+      "onDescription": true,
+      "onTitle": true,
+      "onChannelName": true,
+      "markNotInterested": true
+    },
+    {
+      "name": "hindi",
+      "pattern": "[\\u0900-\\u097F]",
+      "keywords": [
+        "हिंदी",
+        "भारत",
+        "समाचार",
+        "वीडियो"
+      ],
+      "enabled": true,
+      "onDescription": true,
+      "onTitle": true,
+      "onChannelName": true,
+      "markNotInterested": true
+    },
+    {
+      "name": "bengali",
+      "pattern": "[\\u0980-\\u09FF]",
+      "keywords": [
+        "বাংলা",
+        "ভিডিও",
+        "খবর"
+      ],
+      "enabled": true,
+      "onDescription": true,
+      "onTitle": true,
+      "onChannelName": true,
+      "markNotInterested": true
+    },
+    {
+      "name": "vietnamese",
+      "pattern": "[àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđĐểóỗđóếỹôúàệụ]",
+      "keywords": [
+        "việt nam",
+        "tin tức"
+      ],
+      "enabled": true,
+      "onDescription": true,
+      "onTitle": true,
+      "onChannelName": true,
+      "markNotInterested": true
+    },
+    {
+      "name": "greek",
+      "pattern": "[\\u0370-\\u03FF\\u1F00-\\u1FFF]",
+      "keywords": [
+        "ελληνικά",
+        "βίντεο",
+        "ειδήσεις"
+      ],
+      "enabled": true,
+      "onDescription": true,
+      "onTitle": true,
+      "onChannelName": true,
+      "markNotInterested": true
+    },
+    {
+      "name": "hebrew",
+      "pattern": "[\\u0590-\\u05FF]",
+      "keywords": [
+        "עברית",
+        "סרטון",
+        "חדשות"
+      ],
+      "enabled": true,
+      "onDescription": true,
+      "onTitle": true,
+      "onChannelName": true,
+      "markNotInterested": true
+    },
+    {
+      "name": "persian",
+      "pattern": "[\\u0600-\\u06FF\\uFB50-\\uFB9F]",
+      "keywords": [
+        "فارسی",
+        "ویدیو",
+        "اخبار"
+      ],
+      "enabled": true,
+      "onDescription": true,
+      "onTitle": true,
+      "onChannelName": true,
+      "markNotInterested": true
+    },
+    {
+      "name": "indonesian",
+      "pattern": "",
+      "keywords": [
+        "indonesia",
+        "malaysia",
+        "dalam",
+        "dengan",
+        "yang",
+        "dan"
+      ],
+      "enabled": true,
+      "onDescription": true,
+      "onTitle": true,
+      "onChannelName": true,
+      "markNotInterested": true
+    },
+    {
+      "name": "polish",
+      "pattern": "[ąĄćĆęĘłŁńŃóÓśŚźŹżŻ]",
+      "keywords": [
+        "polski",
+        "polska",
+        "wideo"
+      ],
+      "enabled": true,
+      "onDescription": true,
+      "onTitle": true,
+      "onChannelName": true,
+      "markNotInterested": true
+    },
+    {
+      "name": "ukrainian",
+      "pattern": "[ЄєІіЇї]",
+      "keywords": [
+        "україна",
+        "київ",
+        "відео"
+      ],
+      "enabled": true,
+      "onDescription": true,
+      "onTitle": true,
+      "onChannelName": true,
+      "markNotInterested": true
+    },
+    {
+      "name": "french",
+      "pattern": "(?:^|\\s)(le|la|les|un|une|ce|cette|ces|mon|ton|son|votre|notre|leur)(?:\\s|$)",
+      "keywords": [
+        "français",
+        "france",
+        "vidéo"
+      ],
+      "enabled": true,
+      "onDescription": true,
+      "onTitle": true,
+      "onChannelName": true,
+      "markNotInterested": true
+    },
+    {
+      "name": "italian",
+      "pattern": "(?:^|\\s)(il|lo|la|gli|le|un|uno|una|questo|questa|questi|queste)(?:\\s|$)",
+      "keywords": [
+        "italiano",
+        "italia"
+      ],
+      "enabled": true,
+      "onDescription": true,
+      "onTitle": true,
+      "onChannelName": true,
+      "markNotInterested": true
+    },
+    {
+      "name": "german",
+      "pattern": "(?:^|\\s)(der|die|das|und|ist|den|dem|ein|eine|zu|für|mit)(?:\\s|$)",
+      "keywords": [
+        "deutsch",
+        "germany",
+        "österreich",
+        "schweiz"
+      ],
+      "enabled": false,
+      "onDescription": true,
+      "onTitle": true,
+      "onChannelName": true,
+      "markNotInterested": true
+    },
+    {
+      "name": "english",
+      "pattern": "(?:^|\\s)(the|they|these|those|through|although|cannot|could|would|should|during|before|which|with|what|there|their|about)(?:\\s|$)",
+      "keywords": [
+        "teacher",
+        "cancer",
+        "Hospital",
+        "nursery",
+        "Family",
+        "tales",
+        "what",
+        "ultimate",
+        "Slide"
+      ],
+      "enabled": false,
+      "onDescription": true,
+      "onTitle": true,
+      "onChannelName": true,
+      "markNotInterested": false
+    },
+    {
+      "name": "customText",
+      "pattern": "",
+      "keywords": [
+        "Challenge",
+        "asmr",
+        "competition"
+      ],
+      "enabled": true,
+      "onDescription": true,
+      "onTitle": true,
+      "onChannelName": true,
+      "markNotInterested": true
+    },
+    {
+      "name": "customChannel",
+      "pattern": "",
+      "keywords": [
+        "Multi Do",
+        "BaRaDa",
+        "Barafun",
+        "rapapa",
+        "teendo",
+        "ratata",
+        "4teen",
+        "fun food",
+        "teamteen",
+        "parara",
+        "asmr",
+        "woohoo",
+        "vietnamese",
+        "ChallengeTeen",
+        "Nastya",
+        "smile",
+        "teen",
+        "sunny funny",
+        "HaNaNom",
+        "GL Show",
+        "123 go",
+        "DoKuDu",
+        "La La Lebensfreude",
+        "Pea Pea",
+        "Lele meimei",
+        "Spielzeugtester",
+        "Playtoys",
+        "Generation mania",
+        "little big Toys",
+        "babanana",
+        "crazy do",
+        "yay time",
+        "kondosan",
+        "cocomelon",
+        "wolfoo",
+        "Liam Family",
+        "Crew ",
+        "AMG Magic",
+        "Poco tiles",
+        "cocoberry",
+        "dolls",
+        "asmr",
+        "cute",
+        "crush",
+        "Poppy Cartoons",
+        "paw lala",
+        "paw min",
+        "pansy bear",
+        "paw Happy",
+        "super paw"
+      ],
+      "enabled": true,
+      "onDescription": false,
+      "onTitle": false,
+      "onChannelName": true,
+      "markNotInterested": true
+    }
+  ],
+  "whitelist": [
+    {
+      "name": "german",
+      "pattern": "(?:^|\\s)(der|die|das|und|ist|den|dem|ein|eine|zu|für|mit|auf|über|unter|neben|vor|nach|aus|bei|seit)(?:\\s|$)",
+      "keywords": [
+        "deutsch",
+        "germany",
+        "deutschland",
+        "österreich",
+        "schweiz",
+        "folge",
+        "sendung"
+      ],
+      "enabled": true,
+      "onDescription": true,
+      "onTitle": true,
+      "onChannelName": true
+    }
+  ]
+}

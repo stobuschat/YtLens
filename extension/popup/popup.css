@@ -1,0 +1,362 @@
+/* Basic reset and theme variables */
+:root {
+  /* Light theme variables */
+  --background-color: #f9f9fa;
+  --text-color: #0c0c0d;
+  --border-color: #d7d7db;
+  --accent-color: #0060df;
+  --accent-hover: #0a84ff;
+  --success-color: #058b00;
+  --warning-color: #d7b600;
+  --disabled-color: #8f8f98;
+  --button-background: #ffffff;
+  --button-hover: #ededf0;
+  --primary-color: #1a73e8;
+  --primary-hover: #1967d2;
+  --error-color: #ea4335;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark theme variables */
+    --background-color: #2a2a2e;
+    --text-color: #f9f9fa;
+    --border-color: #5a5a5d;
+    --accent-color: #0a84ff;
+    --accent-hover: #00ddff;
+    --success-color: #30e60b;
+    --warning-color: #ffbd4f;
+    --disabled-color: #919191;
+    --button-background: #38383d;
+    --button-hover: #4a4a4f;
+    --primary-color: #8ab4f8;
+    --primary-hover: #aecbfa;
+  }
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 320px;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+.container {
+  padding: 16px;
+}
+
+h1 {
+  font-size: 18px;
+  margin: 0 0 16px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+h1 img {
+  width: 24px;
+  height: 24px;
+}
+
+.status {
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.status p {
+  margin: 8px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.status-indicator {
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status-active {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.status-inactive {
+  background-color: var(--disabled-color);
+  color: white;
+}
+
+.status-dryrun {
+  background-color: var(--warning-color);
+  color: white;
+}
+
+button {
+  width: 100%;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--button-background);
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 14px;
+  border: 1px solid var(--border-color);
+  transition: background-color 0.2s;
+  margin-bottom: 8px;
+}
+
+button:hover {
+  background-color: var(--button-hover);
+}
+
+button:last-child {
+  margin-bottom: 0;
+}
+
+.button-primary {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+}
+
+.button-primary:hover {
+  background-color: var(--accent-hover);
+}
+
+.footer {
+  font-size: 12px;
+  color: #888;
+  margin-top: 12px;
+  text-align: center;
+}
+
+.active-filters {
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+/* Toggle switch styling */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--disabled-color);
+  transition: .4s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--success-color);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--success-color);
+}
+
+input:checked + .slider:before {
+  transform: translateX(16px);
+}
+
+/* YtLens Popup Styles */
+body {
+  width: 300px;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+.container {
+  padding: 16px;
+}
+
+h1 {
+  font-size: 18px;
+  margin: 0 0 16px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.status-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.status-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.status-indicator {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.status-active {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.status-dryrun {
+  background-color: var(--warning-color);
+  color: black;
+}
+
+.status-inactive {
+  background-color: var(--error-color);
+  color: white;
+}
+
+.filter-info {
+  font-size: 13px;
+  color: #5f6368;
+  margin-bottom: 16px;
+}
+
+/* Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .3s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .3s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--primary-color);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--primary-color);
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+input:disabled + .slider {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Button styles */
+button {
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  color: var(--text-color);
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button-primary {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+}
+
+.button-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.icon-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+footer {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-color);
+  font-size: 12px;
+  text-align: center;
+  color: #5f6368;
+}

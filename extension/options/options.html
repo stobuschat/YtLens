@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <title>Extension Options</title>
+    <link rel="stylesheet" href="options.css">
+</head>
+<body>
+    <h1>Extension Options</h1>
+    <form id="options-form">
+        <h2>Global Flags</h2>
+        <div class="option-group">
+            <label>
+                <input type="checkbox" id="debugMode">
+                Enable Debug Mode
+            </label>
+            <label>
+                <input type="checkbox" id="dryrun" checked>
+                Enable Dry Run Mode
+            </label>
+            <label>
+                <input type="checkbox" id="useBlacklist" checked>
+                Use Blacklist
+            </label>
+            <label>
+                <input type="checkbox" id="useWhitelist">
+                Use Whitelist
+            </label>
+            <label>
+                <input type="checkbox" id="useStrictBlocking">
+                Use Strict Blocking
+            </label>
+        </div>
+        
+        <div class="option-group">
+            <h3>YouTube Interface Language</h3>
+            <select id="youtubeLanguage">
+                <option value="">Auto-detect</option>
+                <option value="en">English</option>
+                <option value="de">German (Deutsch)</option>
+                <option value="es">Spanish (Español)</option>
+                <option value="fr">French (Français)</option>
+                <option value="it">Italian</option>
+                <option value="pt">Portuguese</option>
+                <option value="custom">Custom</option>
+            </select>
+            
+            <div id="customPatternsSection" style="display:none;">
+                <div class="form-group">
+                    <label for="customNotInterestedPattern">Custom "Not Interested" button text pattern:</label>
+                    <input type="text" id="customNotInterestedPattern" placeholder="not interested|don't recommend">
+                </div>
+                
+                <div class="form-group">
+                    <label for="customDontRecommendPattern">Custom "Don't Recommend Channel" button text pattern:</label>
+                    <input type="text" id="customDontRecommendPattern" placeholder="don't recommend channel|block channel">
+                </div>
+                
+                <p class="help-text">Use regular expressions to match button text. Use | for alternatives.</p>
+            </div>
+        </div>
+        
+        <h2>Filter Lists</h2>
+        
+        <!-- Blacklist Tab -->
+        <div class="tab-container">
+            <div class="tab active" data-tab="blacklist">Blacklist Rules</div>
+            <div class="tab" data-tab="whitelist">Whitelist Rules</div>
+        </div>
+        
+        <div class="tab-content active" id="blacklist-tab">
+            <div class="filter-toolbar">
+                <button type="button" id="add-blacklist-rule" class="add-rule">Add New Rule</button>
+                <button type="button" id="import-blacklist" class="import-rules">Import Rules</button>
+                <button type="button" id="export-blacklist" class="export-rules">Export Rules</button>
+            </div>
+            
+            <div class="table-container">
+                <table id="blacklist-rules" class="rules-table">
+                    <thead>
+                        <tr>
+                            <th>Enabled</th>
+                            <th>Name</th>
+                            <th>Pattern</th>
+                            <th>Keywords</th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Channel</th>
+                            <th>Not Interested</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Rules will be populated here by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Whitelist Tab -->
+        <div class="tab-content" id="whitelist-tab">
+            <div class="filter-toolbar">
+                <button type="button" id="add-whitelist-rule" class="add-rule">Add New Rule</button>
+                <button type="button" id="import-whitelist" class="import-rules">Import Rules</button>
+                <button type="button" id="export-whitelist" class="export-rules">Export Rules</button>
+            </div>
+            
+            <div class="table-container">
+                <table id="whitelist-rules" class="rules-table">
+                    <thead>
+                        <tr>
+                            <th>Enabled</th>
+                            <th>Name</th>
+                            <th>Pattern</th>
+                            <th>Keywords</th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Channel</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Rules will be populated here by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="form-actions">
+            <button type="submit">Save All Settings</button>
+            <button type="button" id="loadPreset">Load Preset</button>
+            <button type="button" id="exportAllSettings" class="export-rules">Export All Settings</button>
+            <button type="button" id="importAllSettings" class="import-rules">Import All Settings</button>
+        </div>
+    </form>
+    
+    <!-- Rule Edit Modal -->
+    <div id="rule-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 id="modal-title">Add/Edit Rule</h3>
+            <form id="rule-form">
+                <input type="hidden" id="rule-list-type">
+                <input type="hidden" id="rule-index">
+                
+                <div class="form-group">
+                    <label for="rule-name">Rule Name:</label>
+                    <input type="text" id="rule-name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="rule-pattern">Pattern (RegEx):</label>
+                    <input type="text" id="rule-pattern">
+                </div>
+                
+                <div class="form-group">
+                    <label for="rule-keywords">Keywords (comma separated):</label>
+                    <textarea id="rule-keywords" rows="3"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="rule-channels">Channel Names (comma separated):</label>
+                    <textarea id="rule-channels" rows="3"></textarea>
+                </div>
+                
+                <div class="form-group options">
+                    <label><input type="checkbox" id="rule-enabled" checked> Enabled</label>
+                    <label><input type="checkbox" id="rule-title" checked> Check Title</label>
+                    <label><input type="checkbox" id="rule-description" checked> Check Description</label>
+                    <label><input type="checkbox" id="rule-channel" checked> Check Channel Name</label>
+                    <label id="not-interested-option"><input type="checkbox" id="rule-not-interested" checked> Mark Not Interested</label>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit">Save Rule</button>
+                    <button type="button" id="cancel-rule">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="options.js"></script>
+</body>
+</html>
