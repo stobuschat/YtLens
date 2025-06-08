@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "YtLens",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Filter YouTube videos based on language and content",
 
   "permissions": [
@@ -14,6 +14,7 @@
 
   "content_scripts": [{
     "matches": ["*://*.youtube.com/*"],
+    "exclude_matches": ["*://*.youtube.com/feed/history*"],
     "js": ["content/content.js"]
   }],
 

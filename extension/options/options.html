@@ -34,6 +34,37 @@
             </label>
         </div>
         
+        <!-- NEW: Synchronized Video Filtering Section -->
+        <div class="option-group">
+            <h3>Synchronized/Dubbed Video Filtering</h3>
+            <label>
+                <input type="checkbox" id="filterSynchronizedVideos">
+                Filter videos with "Synchronisiert" or "Dubbed" badges
+            </label>
+            
+            <div id="synchronizedOptionsSection" style="display:none; margin-top: 10px; margin-left: 20px;">
+                <h4>Action for synchronized videos:</h4>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="synchronizedVideoAction" value="nothing">
+                        Do nothing (just detect)
+                    </label>
+                    <label>
+                        <input type="radio" name="synchronizedVideoAction" value="hide" checked>
+                        Hide videos
+                    </label>
+                    <label>
+                        <input type="radio" name="synchronizedVideoAction" value="notInterested">
+                        Mark as "Not Interested"
+                    </label>
+                </div>
+                <p class="help-text">
+                    This setting applies to videos that have synchronized/dubbed audio badges. 
+                    These are typically content that has been auto-dubbed into your language.
+                </p>
+            </div>
+        </div>
+        
         <div class="option-group">
             <h3>YouTube Interface Language</h3>
             <select id="youtubeLanguage">
