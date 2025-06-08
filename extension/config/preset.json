@@ -2,10 +2,10 @@
   "blacklist": [
     {
       "name": "non_latin_script",
-      "pattern": "[\\u0400-\\u04FF\\u0590-\\u05FF\\u0600-\\u06FF\\u0900-\\u097F\\u0980-\\u09FF\\u3040-\\u30FF\\u3400-\\u4DBF\\u4E00-\\u9FFF\\uAC00-\\uD7AF]",
+      "pattern": "(?![\\u2713\\u2714\\u2665\\u2665\\u266A\\u266B\\u00A9\\u00AE\\u2122])[\\u0400-\\u04FF\\u0590-\\u05FF\\u0600-\\u06FF\\u0900-\\u097F\\u0980-\\u09FF\\u3040-\\u30FF\\u3400-\\u4DBF\\u4E00-\\u9FFF\\uAC00-\\uD7AF]",
       "keywords": [],
       "enabled": true,
-      "onDescription": false,
+      "onDescription": true,
       "onTitle": true,
       "onChannelName": true,
       "markNotInterested": true
@@ -97,7 +97,7 @@
     },
     {
       "name": "spanish",
-      "pattern": "(?:^|\\s)(el|la|los|las|ese|esta|muy|más|así|está|día|año)(?:\\s|$)",
+      "pattern": "(?:^|\\s)(el|la|los|las|ese|esta|muy|más|así|está|día|año|dia|y|al|del|Para|a|de|con|mejor)(?:\\s|$)",
       "keywords": [
         "español",
         "latino",
@@ -338,7 +338,7 @@
     },
     {
       "name": "english",
-      "pattern": "(?:^|\\s)(the|they|these|those|through|although|cannot|could|would|should|during|before|which|with|what|there|their|about)(?:\\s|$)",
+      "pattern": "(?:^|\\s)(Got|after|the|only|they|these|those|through|although|cannot|could|would|should|during|before|which|with|what|there|their|about|who|poor|kitten.+|to|and|for|dead)(?:\\s|$)",
       "keywords": [
         "teacher",
         "cancer",
@@ -348,7 +348,16 @@
         "tales",
         "what",
         "ultimate",
-        "Slide"
+        "Slide",
+        "crushing",
+        "vs",
+        "kitten",
+        "Challenge",
+        "do",
+        "Hamster",
+        "funny",
+        "Barbie",
+        "SURGERY"
       ],
       "enabled": false,
       "onDescription": true,
@@ -362,7 +371,12 @@
       "keywords": [
         "Challenge",
         "asmr",
-        "competition"
+        "competition",
+        "teenvee",
+        "troom",
+        "hahahub",
+        "teentreff",
+        "r.teens"
       ],
       "enabled": true,
       "onDescription": true,
@@ -423,7 +437,15 @@
         "paw min",
         "pansy bear",
         "paw Happy",
-        "super paw"
+        "super paw",
+        "Vlad",
+        "multi do",
+        "Sol Animation",
+        "ToonBurger",
+        "Lingokids",
+        "5Lol",
+        "Roblox",
+        "oren & pinki"
       ],
       "enabled": true,
       "onDescription": false,
@@ -445,7 +467,7 @@
         "folge",
         "sendung"
       ],
-      "enabled": true,
+      "enabled": false,
       "onDescription": true,
       "onTitle": true,
       "onChannelName": true
