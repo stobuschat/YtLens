@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+*.lock
+
+# Build outputs
+dist/
+build/
+*.zip
+
+# Extension package files
+*.xpi
+*.crx
+
+# Generated files
+*.min.js
+*.min.css
+
+# Documentation that shouldn't be reformatted
+CHANGELOG.md
+LICENSE
+README.md
+
+# IDE/Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
